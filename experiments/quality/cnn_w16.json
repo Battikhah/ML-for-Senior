@@ -1,0 +1,6 @@
+{
+  "family": "cnn",
+  "id": "cnn_w16",
+  "suite": "quality",
+  "width": 16
+}

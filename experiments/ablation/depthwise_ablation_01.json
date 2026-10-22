@@ -1,0 +1,6 @@
+{
+  "family": "depthwise",
+  "id": "depthwise_ablation_01",
+  "learning_rate": 0.003,
+  "suite": "ablation"
+}

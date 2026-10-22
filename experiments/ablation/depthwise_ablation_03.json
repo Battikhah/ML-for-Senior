@@ -1,0 +1,6 @@
+{
+  "dropout": 0.5,
+  "family": "depthwise",
+  "id": "depthwise_ablation_03",
+  "suite": "ablation"
+}

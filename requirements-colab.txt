@@ -1,0 +1,2 @@
+# Run from the extracted project root in a fresh Python 3.10–3.12 Colab runtime.
+-e .[train,dev]

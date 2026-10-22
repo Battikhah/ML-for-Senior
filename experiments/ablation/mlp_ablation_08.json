@@ -1,0 +1,8 @@
+{
+  "family": "mlp",
+  "features": {
+    "snr_gate": null
+  },
+  "id": "mlp_ablation_08",
+  "suite": "ablation"
+}

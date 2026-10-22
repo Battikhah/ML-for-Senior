@@ -1,0 +1,8 @@
+{
+  "dropout": 0.1,
+  "family": "depthwise",
+  "id": "tiny_depthwise_w12",
+  "suite": "compact",
+  "target": "local",
+  "width": 12
+}

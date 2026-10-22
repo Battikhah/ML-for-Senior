@@ -1,0 +1,8 @@
+{
+  "family": "residual",
+  "features": {
+    "snr_gate": null
+  },
+  "id": "residual_ablation_08",
+  "suite": "ablation"
+}

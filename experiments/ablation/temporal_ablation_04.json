@@ -1,0 +1,6 @@
+{
+  "class_weight": true,
+  "family": "temporal",
+  "id": "temporal_ablation_04",
+  "suite": "ablation"
+}

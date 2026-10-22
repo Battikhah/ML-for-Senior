@@ -1,0 +1,6 @@
+{
+  "family": "svm",
+  "id": "svm_none",
+  "normalization": "none",
+  "suite": "baseline"
+}

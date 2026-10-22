@@ -1,0 +1,6 @@
+{
+  "dropout": 0.5,
+  "family": "cnn",
+  "id": "cnn_ablation_03",
+  "suite": "ablation"
+}

@@ -1,0 +1,6 @@
+{
+  "dropout": 0.5,
+  "family": "residual",
+  "id": "residual_ablation_03",
+  "suite": "ablation"
+}

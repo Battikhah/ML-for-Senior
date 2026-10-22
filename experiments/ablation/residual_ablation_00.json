@@ -1,0 +1,6 @@
+{
+  "family": "residual",
+  "id": "residual_ablation_00",
+  "learning_rate": 0.0003,
+  "suite": "ablation"
+}

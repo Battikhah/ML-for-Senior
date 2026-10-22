@@ -1,0 +1,6 @@
+{
+  "family": "logistic",
+  "id": "logistic_coefficient",
+  "normalization": "coefficient",
+  "suite": "baseline"
+}

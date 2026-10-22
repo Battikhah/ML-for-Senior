@@ -1,0 +1,6 @@
+{
+  "family": "depthwise",
+  "id": "depthwise_ablation_07",
+  "normalization": "none",
+  "suite": "ablation"
+}

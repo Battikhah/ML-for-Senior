@@ -1,0 +1,8 @@
+{
+  "family": "mlp",
+  "features": {
+    "variant": "causal"
+  },
+  "id": "mlp_ablation_09",
+  "suite": "ablation"
+}

@@ -1,0 +1,11 @@
+{
+  "family": "depthwise",
+  "features": {
+    "coefficients": 20,
+    "frames": 60
+  },
+  "id": "depthwise_60x20",
+  "suite": "local_features",
+  "target": "local",
+  "width": 8
+}

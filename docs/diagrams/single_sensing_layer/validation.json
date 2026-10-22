@@ -1,0 +1,23 @@
+{
+  "pdf_pages": [
+    1,
+    1,
+    2
+  ],
+  "native_drawio_pages": 2,
+  "svg_files": 2,
+  "node_overlap_count": 0,
+  "decision_branches_checked": true,
+  "label_and_diamond_fit_checked": true,
+  "pdf_previews_visually_reviewed": true,
+  "diagram_scope": "one sensing layer, external destination only",
+  "firmware_or_model_modified": false,
+  "sha256": {
+    "docs/diagrams/single_sensing_layer/local_classification_single_layer.svg": "660635ec21a9ea97cacac3941e147fd131018efb822012d595c538f856ba656b",
+    "docs/diagrams/single_sensing_layer/server_classification_single_layer.svg": "41f362c5e5c6fdef342c9862698707c35fd1329adb8c59ed1bd59c9d13c66761",
+    "docs/diagrams/single_sensing_layer/single_sensing_layer_flows.drawio": "15401fb2bd94d94b944c0917c0880ef682ecafcc454f568f45928b9a9661237f",
+    "output/pdf/single_sensing_layer/server_classification_single_layer.pdf": "5b768ecb9e431b92847a61472fded33da726e4c49324eebda70e3e87dfd0e609",
+    "output/pdf/single_sensing_layer/local_classification_single_layer.pdf": "9d43258211f306996d4683bdfbe94020ec47c54efa229b664b85236a0271e814",
+    "output/pdf/single_sensing_layer/single_sensing_layer_flows.pdf": "a7d0f467c124f811104aa7ae9bd3c89ef38662707646e03e2f0cfd393ec2b144"
+  }
+}

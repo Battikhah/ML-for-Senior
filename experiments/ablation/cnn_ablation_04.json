@@ -1,0 +1,6 @@
+{
+  "class_weight": true,
+  "family": "cnn",
+  "id": "cnn_ablation_04",
+  "suite": "ablation"
+}

@@ -1,0 +1,6 @@
+{
+  "family": "cnn",
+  "id": "cnn_ablation_05",
+  "noise": 0.05,
+  "suite": "ablation"
+}

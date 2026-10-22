@@ -1,0 +1,6 @@
+{
+  "dropout": 0.1,
+  "family": "mlp",
+  "id": "mlp_ablation_02",
+  "suite": "ablation"
+}

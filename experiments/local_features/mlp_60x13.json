@@ -1,0 +1,11 @@
+{
+  "family": "mlp",
+  "features": {
+    "coefficients": 13,
+    "frames": 60
+  },
+  "id": "mlp_60x13",
+  "suite": "local_features",
+  "target": "local",
+  "width": 8
+}

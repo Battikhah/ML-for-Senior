@@ -1,0 +1,6 @@
+{
+  "family": "residual",
+  "id": "residual_ablation_05",
+  "noise": 0.05,
+  "suite": "ablation"
+}

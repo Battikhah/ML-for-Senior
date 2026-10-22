@@ -1,0 +1,6 @@
+{
+  "family": "histogram",
+  "id": "histogram_coefficient",
+  "normalization": "coefficient",
+  "suite": "baseline"
+}

@@ -1,0 +1,6 @@
+{
+  "class_weight": true,
+  "family": "residual",
+  "id": "residual_ablation_04",
+  "suite": "ablation"
+}

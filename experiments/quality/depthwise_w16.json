@@ -1,0 +1,6 @@
+{
+  "family": "depthwise",
+  "id": "depthwise_w16",
+  "suite": "quality",
+  "width": 16
+}

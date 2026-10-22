@@ -1,0 +1,6 @@
+{
+  "family": "logistic",
+  "id": "logistic_none",
+  "normalization": "none",
+  "suite": "baseline"
+}

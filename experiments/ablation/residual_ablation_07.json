@@ -1,0 +1,6 @@
+{
+  "family": "residual",
+  "id": "residual_ablation_07",
+  "normalization": "none",
+  "suite": "ablation"
+}

@@ -1,0 +1,8 @@
+{
+  "family": "temporal",
+  "features": {
+    "variant": "causal"
+  },
+  "id": "temporal_ablation_09",
+  "suite": "ablation"
+}

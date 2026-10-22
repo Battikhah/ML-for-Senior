@@ -1,0 +1,8 @@
+{
+  "family": "depthwise",
+  "features": {
+    "variant": "causal"
+  },
+  "id": "depthwise_ablation_09",
+  "suite": "ablation"
+}

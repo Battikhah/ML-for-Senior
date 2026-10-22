@@ -1,0 +1,6 @@
+{
+  "class_weight": true,
+  "family": "mlp",
+  "id": "mlp_ablation_04",
+  "suite": "ablation"
+}

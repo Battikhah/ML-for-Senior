@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1260" viewBox="0 0 1600 1260" role="img"><title>Server-side classification: one sensing layer</title><rect width="100%" height="100%" fill="white"/>
+<rect x="34" y="118" width="1532" height="920" rx="16" fill="none" stroke="#c8d8dd" stroke-dasharray="7 5"/>
+<polyline points="250.0,234 250.0,254" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,254 253.6,246.0 246.4,246.0" fill="#54717c"/>
+<polyline points="250.0,316 250.0,340" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,340 253.6,332.0 246.4,332.0" fill="#54717c"/>
+<polyline points="250.0,402 250.0,428" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,428 253.6,420.0 246.4,420.0" fill="#54717c"/>
+<polyline points="250.0,512 250.0,547" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,547 253.6,539.0 246.4,539.0" fill="#54717c"/>
+<polyline points="420,470.0 493,470.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="493,470.0 485.0,466.4 485.0,473.6" fill="#54717c"/>
+<polyline points="250.0,609 250.0,632" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,632 253.6,624.0 246.4,624.0" fill="#54717c"/>
+<polyline points="250.0,708 250.0,740" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,740 253.6,732.0 246.4,732.0" fill="#54717c"/>
+<polyline points="420,784.0 493,784.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="493,784.0 485.0,780.4 485.0,787.6" fill="#54717c"/>
+<polyline points="250.0,828 250.0,856" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="250.0,856 253.6,848.0 246.4,848.0" fill="#54717c"/>
+<polyline points="420,889.0 457,889 457,919 493,919.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="493,919.0 485.0,915.4 485.0,922.6" fill="#54717c"/>
+<polyline points="800.0,218 800.0,246" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,246 803.6,238.0 796.4,238.0" fill="#54717c"/>
+<polyline points="800.0,322 800.0,350" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,350 803.6,342.0 796.4,342.0" fill="#54717c"/>
+<polyline points="800.0,426 800.0,455" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,455 803.6,447.0 796.4,447.0" fill="#54717c"/>
+<polyline points="800.0,531 800.0,560" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,560 803.6,552.0 796.4,552.0" fill="#54717c"/>
+<polyline points="800.0,636 800.0,665" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,665 803.6,657.0 796.4,657.0" fill="#54717c"/>
+<polyline points="800.0,741 800.0,770" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,770 803.6,762.0 796.4,762.0" fill="#54717c"/>
+<polyline points="630,811.0 585,811 585,388 630,388.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="630,388.0 622.0,384.4 622.0,391.6" fill="#54717c"/>
+<polyline points="800.0,852 800.0,880" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,880 803.6,872.0 796.4,872.0" fill="#54717c"/>
+<polyline points="800.0,956 800.0,982" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="800.0,982 803.6,974.0 796.4,974.0" fill="#54717c"/>
+<polyline points="1350.0,218 1350.0,246" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,246 1353.6,238.0 1346.4,238.0" fill="#54717c"/>
+<polyline points="1350.0,322 1350.0,350" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,350 1353.6,342.0 1346.4,342.0" fill="#54717c"/>
+<polyline points="1350.0,440 1350.0,475" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,475 1353.6,467.0 1346.4,467.0" fill="#54717c"/>
+<polyline points="1520,395.0 1548,395 1548,969 1520,969.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1520,969.0 1528.0,972.6 1528.0,965.4" fill="#54717c"/>
+<polyline points="1350.0,563 1350.0,592" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,592 1353.6,584.0 1346.4,584.0" fill="#54717c"/>
+<polyline points="1350.0,674 1350.0,712" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,712 1353.6,704.0 1346.4,704.0" fill="#54717c"/>
+<polyline points="1180,633.0 1142,642.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1142,642.0 1150.6143212818852,643.6593579639302 1148.954963317955,636.6531798940023" fill="#54717c"/>
+<polyline points="1067.0,694 1067,750 1180,750.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1180,750.0 1172.0,746.4 1172.0,753.6" fill="#54717c"/>
+<polyline points="1350.0,788 1350.0,822" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,822 1353.6,814.0 1346.4,814.0" fill="#54717c"/>
+<polyline points="1350.0,904 1350.0,928" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1350.0,928 1353.6,920.0 1346.4,920.0" fill="#54717c"/>
+<polyline points="1180,863.0 1142,869.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1142,869.0 1150.4635689871354,871.3082460874006 1149.3406384581297,864.1963527370314" fill="#54717c"/>
+<polyline points="1067.0,916 1067,969 1180,969.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="1180,969.0 1172.0,965.4 1172.0,972.6" fill="#54717c"/>
+<polyline points="1350.0,1010 1350,1024 52,1024 52,371 80,371.0" fill="none" stroke="#54717c" stroke-width="1.7"/><polygon points="80,371.0 72.0,367.4 72.0,374.6" fill="#54717c"/>
+<polyline points="1520,750.0 1580,750 1580,1116 1520,1116.0" fill="none" stroke="#54717c" stroke-width="1.7" stroke-dasharray="6 4"/><polygon points="1520,1116.0 1528.0,1119.6 1528.0,1112.4" fill="#54717c"/>
+<rect x="80" y="190" width="340" height="44" rx="22" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="217.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">BOOT / INITIALIZE</text>
+<rect x="80" y="254" width="340" height="62" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="271.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Load the matched deployment profile</text>
+<text x="250.0" y="290.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Feature constants, versions and thresholds</text>
+<text x="250.0" y="309.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Restore RTC schedule, daily state and queue</text>
+<rect x="80" y="340" width="340" height="62" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="357.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Wake from RTC or pending retry</text>
+<text x="250.0" y="376.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Check current time and unsent state</text>
+<text x="250.0" y="395.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Measurement cadence is configurable</text>
+<polygon points="250.0,428 420,470.0 250.0,512 80,470.0" fill="#fff6df" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="475.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Measurement due?</text>
+<rect x="80" y="547" width="340" height="62" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="564.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Power one sensing chain</text>
+<text x="250.0" y="583.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">One piezo disc + MCP6002 conditioning</text>
+<text x="250.0" y="602.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Enable ESP32 ADC / DMA</text>
+<rect x="80" y="632" width="340" height="76" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="646.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Acquire one streamed recording</text>
+<text x="250.0" y="665.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Example: 20.5 s at 8 kHz mono</text>
+<text x="250.0" y="684.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Stream with bounded / reused buffers</text>
+<text x="250.0" y="703.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Keep the acquisition timestamp</text>
+<polygon points="250.0,740 420,784.0 250.0,828 80,784.0" fill="#fff6df" stroke="#54717c" stroke-width="1.6"/>
+<text x="250.0" y="779.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Acquisition valid?</text>
+<text x="250.0" y="798.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">ADC / clipping / data checks</text>
+<rect x="80" y="856" width="340" height="66" rx="8" fill="#fff0ec" stroke="#ad5b46" stroke-width="1.6"/>
+<text x="250.0" y="875.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Record an invalid measurement</text>
+<text x="250.0" y="894.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Increment quality / acquisition counters</text>
+<text x="250.0" y="913.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Do not classify an invalid capture as healthy</text>
+<ellipse cx="507.0" cy="784.0" rx="14.0" ry="14.0" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="507.0" y="788.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#173641">A</text>
+<ellipse cx="507.0" cy="470.0" rx="14.0" ry="14.0" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="507.0" y="474.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#173641">C</text>
+<ellipse cx="507.0" cy="919.0" rx="14.0" ry="14.0" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="507.0" y="923.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#173641">C</text>
+<ellipse cx="800.0" cy="204.0" rx="14.0" ry="14.0" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="208.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#173641">A</text>
+<rect x="630" y="246" width="340" height="76" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="260.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Select the temporal windows</text>
+<text x="800.0" y="279.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">10 s windows, 5 s stride + final tail</text>
+<text x="800.0" y="298.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">20.5 s example: 0, 5, 10, 10.5 s</text>
+<text x="800.0" y="317.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Initialize ordered window-vector list</text>
+<rect x="630" y="350" width="340" height="76" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="364.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Filter and measure signal quality</text>
+<text x="800.0" y="383.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Bandpass: 100-2500 Hz</text>
+<text x="800.0" y="402.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">100 ms energy / burst statistics</text>
+<text x="800.0" y="421.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Energy variation is not an RPW decision</text>
+<rect x="630" y="455" width="340" height="76" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="469.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Extract and normalize MFCCs</text>
+<text x="800.0" y="488.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">30 frames x 13 coefficients = 390 values</text>
+<text x="800.0" y="507.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Apply frozen training mean / scale</text>
+<text x="800.0" y="526.8199999999999" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Match the validated frontend exactly</text>
+<rect x="630" y="560" width="340" height="76" rx="8" fill="#edf4fb" stroke="#2869a9" stroke-width="1.6"/>
+<text x="800.0" y="574.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Project into PCA16 coordinates</text>
+<text x="800.0" y="593.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Subtract the frozen PCA training mean</text>
+<text x="800.0" y="612.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Apply the learned 16 x 390 projection</text>
+<text x="800.0" y="631.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">No classifier runs on this sensing node</text>
+<rect x="630" y="665" width="340" height="76" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="679.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Encode one 16-byte window vector</text>
+<text x="800.0" y="698.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Round / clamp using training-fitted ranges</text>
+<text x="800.0" y="717.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">16 components, one byte per component</text>
+<text x="800.0" y="736.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Retain profile ID and window order</text>
+<polygon points="800.0,770 970,811.0 800.0,852 630,811.0" fill="#fff6df" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="816.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">More windows?</text>
+<rect x="630" y="880" width="340" height="76" rx="8" fill="#edf4fb" stroke="#2869a9" stroke-width="1.6"/>
+<text x="800.0" y="894.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Losslessly pack the window vectors</text>
+<text x="800.0" y="913.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">First vector + delta / Rice codes + escapes</text>
+<text x="800.0" y="932.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Keep the shortest encoding or raw fallback</text>
+<text x="800.0" y="951.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">No additional PCA precision is discarded</text>
+<ellipse cx="800.0" cy="996.0" rx="14.0" ry="14.0" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="800.0" y="1000.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#173641">C</text>
+<ellipse cx="1350.0" cy="204.0" rx="14.0" ry="14.0" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="208.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#173641">C</text>
+<rect x="1180" y="246" width="340" height="76" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="260.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Persist features and health state</text>
+<text x="1350.0" y="279.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Keep each complete measurement record</text>
+<text x="1350.0" y="298.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Node / record / window / profile identifiers</text>
+<text x="1350.0" y="317.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">No RPW label is generated here</text>
+<polygon points="1350.0,350 1520,395.0 1350.0,440 1180,395.0" fill="#fff6df" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="390.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Transmit due?</text>
+<text x="1350.0" y="409.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Sample / daily / retry deadline</text>
+<rect x="1180" y="475" width="340" height="88" rx="8" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="495.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Build the feature / status report</text>
+<text x="1350.0" y="514.8199999999999" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Drain retained records at least daily</text>
+<text x="1350.0" y="533.8199999999999" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Multiple packets may be required</text>
+<text x="1350.0" y="552.8199999999999" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Send heartbeat even with no valid capture</text>
+<polygon points="1350.0,592 1520,633.0 1350.0,674 1180,633.0" fill="#fff6df" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="628.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Feature block fits budget?</text>
+<text x="1350.0" y="647.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">64 B feature-block target</text>
+<rect x="992" y="590" width="150" height="104" rx="8" fill="#fff6e8" stroke="#ba8b41" stroke-width="1.6"/>
+<text x="1067.0" y="612.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#173641">If oversized</text>
+<text x="1067.0" y="629.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Fragment the record</text>
+<text x="1067.0" y="646.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Keep index + total</text>
+<text x="1067.0" y="663.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Preserve all windows</text>
+<text x="1067.0" y="680.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Do not silently drop</text>
+<rect x="1180" y="712" width="340" height="76" rx="8" fill="#edf4fb" stroke="#2869a9" stroke-width="1.6"/>
+<text x="1350.0" y="726.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Transmit using RFM95W LoRa</text>
+<text x="1350.0" y="745.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Use the configured channel / SF / BW</text>
+<text x="1350.0" y="764.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Apply the planned TX slot / backoff</text>
+<text x="1350.0" y="783.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Gateway relays; queued data survives failure</text>
+<polygon points="1350.0,822 1520,863.0 1350.0,904 1180,863.0" fill="#fff6df" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="868.32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Application ACK received?</text>
+<rect x="992" y="822" width="150" height="94" rx="8" fill="#fff6e8" stroke="#ba8b41" stroke-width="1.6"/>
+<text x="1067.0" y="839.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#173641">Delivery pending</text>
+<text x="1067.0" y="856.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Bounded retries</text>
+<text x="1067.0" y="873.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Backoff / retry later</text>
+<text x="1067.0" y="890.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Persist until ACK</text>
+<text x="1067.0" y="907.76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#173641">Mark report overdue</text>
+<rect x="1180" y="928" width="340" height="82" rx="22" fill="#ffffff" stroke="#54717c" stroke-width="1.6"/>
+<text x="1350.0" y="945.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">Commit acknowledged state</text>
+<text x="1350.0" y="964.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Clear acknowledged items / totals only</text>
+<text x="1350.0" y="983.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Queue pending: schedule immediate TX wake</text>
+<text x="1350.0" y="1002.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Else sleep until next sample / retry</text>
+<rect x="80" y="1070" width="1440" height="92" rx="8" fill="#f4f7f9" stroke="#c8d8dd" stroke-width="1.6"/>
+<text x="800.0" y="1092.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#173641">EXTERNAL ENDPOINT ONLY - gateway relay and server classification</text>
+<text x="800.0" y="1111.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Gateway: validate / buffer / forward over Wi-Fi or cellular; no RPW inference at the gateway.</text>
+<text x="800.0" y="1130.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Server: check profile/version, reassemble fragments, unpack deltas, dequantize PCA16 and apply inverse PCA.</text>
+<text x="800.0" y="1149.82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#173641">Reshape to normalized 30 x 13 MFCCs (do not normalize twice); classify windows, take maximum score, apply saved threshold, store / alert.</text>
+<rect x="262.662" y="518" width="26.676000000000002" height="15" fill="white"/><text x="276" y="530" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Yes</text>
+<rect x="446.332" y="448" width="21.336" height="15" fill="white"/><text x="457" y="460" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">No</text>
+<rect x="443.662" y="758" width="26.676000000000002" height="15" fill="white"/><text x="457" y="770" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Yes</text>
+<rect x="267.332" y="832" width="21.336" height="15" fill="white"/><text x="278" y="844" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">No</text>
+<rect x="458.318" y="943" width="77.364" height="15" fill="white"/><text x="497" y="955" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Report status</text>
+<rect x="530.314" y="430" width="99.37200000000001" height="15" fill="white"/><text x="580" y="442" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Yes: next window</text>
+<rect x="813.332" y="857" width="21.336" height="15" fill="white"/><text x="824" y="869" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">No</text>
+<rect x="1359.662" y="448" width="26.676000000000002" height="15" fill="white"/><text x="1373" y="460" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Yes</text>
+<rect x="1523.332" y="442" width="21.336" height="15" fill="white"/><text x="1534" y="454" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">No</text>
+<rect x="1360.662" y="684" width="26.676000000000002" height="15" fill="white"/><text x="1374" y="696" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Yes</text>
+<rect x="1149.332" y="610" width="21.336" height="15" fill="white"/><text x="1160" y="622" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">No</text>
+<rect x="1361.662" y="912" width="26.676000000000002" height="15" fill="white"/><text x="1375" y="924" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Yes</text>
+<rect x="1149.332" y="840" width="21.336" height="15" fill="white"/><text x="1160" y="852" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">No</text>
+<rect x="489.976" y="1036" width="120.048" height="15" fill="white"/><text x="550" y="1048" font-size="12" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#667b86">Next scheduled wake</text>
+<text x="46" y="52" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#173641">Server-side classification: one sensing layer</text>
+<text x="47" y="88" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#667b86">ONE piezo sensor + ONE ESP32-WROOM32 + ONE RFM95W link. Temporal windows are not extra sensing layers.</text>
+<text x="80" y="159" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2869a9">1  WAKE AND ACQUIRE</text>
+<text x="630" y="159" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2869a9">2  PROCESS THE WINDOWS</text>
+<text x="1180" y="159" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2869a9">3  REPORT AND DELIVER</text>
+<text x="47" y="1190" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#667b86">Current evaluated classifier route: four windows for a 20.5 s recording. Five-window delta packing is a payload experiment, not a revalidated classifier.</text>
+<text x="47" y="1214" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#667b86">64 B refers to a feature-block target. Node/time identifiers, fragment headers, integrity/security and radio framing consume additional bytes.</text>
+<text x="47" y="1238" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#667b86">Daily reporting remains required even after rejected captures. The energy-variation proxy is a quality statistic, not proof of RPW activity.</text>
+</svg>

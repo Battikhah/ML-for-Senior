@@ -1,0 +1,8 @@
+{
+  "family": "cnn",
+  "features": {
+    "variant": "causal"
+  },
+  "id": "cnn_ablation_09",
+  "suite": "ablation"
+}

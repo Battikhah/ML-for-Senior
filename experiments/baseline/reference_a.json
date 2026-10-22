@@ -1,0 +1,7 @@
+{
+  "family": "reference_a",
+  "id": "reference_a",
+  "normalization": "none",
+  "patience": 120,
+  "suite": "baseline"
+}

@@ -1,0 +1,6 @@
+{
+  "class_weight": true,
+  "family": "depthwise",
+  "id": "depthwise_ablation_04",
+  "suite": "ablation"
+}

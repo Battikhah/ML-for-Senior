@@ -1,0 +1,6 @@
+{
+  "family": "mlp",
+  "id": "mlp_ablation_06",
+  "suite": "ablation",
+  "time_mask": 3
+}

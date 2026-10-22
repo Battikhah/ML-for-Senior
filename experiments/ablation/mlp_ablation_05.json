@@ -1,0 +1,6 @@
+{
+  "family": "mlp",
+  "id": "mlp_ablation_05",
+  "noise": 0.05,
+  "suite": "ablation"
+}

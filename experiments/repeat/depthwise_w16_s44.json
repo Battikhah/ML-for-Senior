@@ -1,0 +1,6 @@
+{
+  "family": "depthwise",
+  "id": "depthwise_w16_s44",
+  "seed": 44,
+  "suite": "repeat"
+}

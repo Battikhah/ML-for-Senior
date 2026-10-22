@@ -1,0 +1,8 @@
+{
+  "family": "residual",
+  "features": {
+    "variant": "causal"
+  },
+  "id": "residual_ablation_09",
+  "suite": "ablation"
+}

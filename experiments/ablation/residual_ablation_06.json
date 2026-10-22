@@ -1,0 +1,6 @@
+{
+  "family": "residual",
+  "id": "residual_ablation_06",
+  "suite": "ablation",
+  "time_mask": 3
+}

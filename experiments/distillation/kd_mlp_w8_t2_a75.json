@@ -1,0 +1,11 @@
+{
+  "alpha": 0.75,
+  "dropout": 0.1,
+  "family": "mlp",
+  "id": "kd_mlp_w8_t2_a75",
+  "method": "kd",
+  "suite": "distillation",
+  "target": "local",
+  "temperature": 2.0,
+  "width": 8
+}

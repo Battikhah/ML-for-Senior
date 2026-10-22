@@ -1,0 +1,6 @@
+{
+  "family": "svm",
+  "id": "svm_coefficient",
+  "normalization": "coefficient",
+  "suite": "baseline"
+}

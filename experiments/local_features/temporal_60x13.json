@@ -1,0 +1,11 @@
+{
+  "family": "temporal",
+  "features": {
+    "coefficients": 13,
+    "frames": 60
+  },
+  "id": "temporal_60x13",
+  "suite": "local_features",
+  "target": "local",
+  "width": 8
+}

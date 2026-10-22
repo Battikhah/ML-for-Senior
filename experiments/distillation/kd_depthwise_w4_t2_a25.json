@@ -1,0 +1,11 @@
+{
+  "alpha": 0.25,
+  "dropout": 0.1,
+  "family": "depthwise",
+  "id": "kd_depthwise_w4_t2_a25",
+  "method": "kd",
+  "suite": "distillation",
+  "target": "local",
+  "temperature": 2.0,
+  "width": 4
+}

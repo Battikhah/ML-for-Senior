@@ -1,0 +1,2232 @@
+[
+  {
+    "route": "local",
+    "title": "Local classification: one sensing layer",
+    "nodes": [
+      {
+        "id": "start",
+        "x": 80,
+        "y": 190,
+        "w": 340,
+        "h": 44,
+        "title": "BOOT / INITIALIZE",
+        "body": [],
+        "kind": "terminator",
+        "tone": "normal"
+      },
+      {
+        "id": "config",
+        "x": 80,
+        "y": 254,
+        "w": 340,
+        "h": 62,
+        "title": "Load the matched deployment profile",
+        "body": [
+          "Feature constants, versions and thresholds",
+          "Restore RTC schedule, daily state and queue"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "wake",
+        "x": 80,
+        "y": 340,
+        "w": 340,
+        "h": 62,
+        "title": "Wake from RTC or pending retry",
+        "body": [
+          "Check current time and unsent state",
+          "Measurement cadence is configurable"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "due",
+        "x": 80,
+        "y": 428,
+        "w": 340,
+        "h": 84,
+        "title": "Measurement due?",
+        "body": [],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "power",
+        "x": 80,
+        "y": 547,
+        "w": 340,
+        "h": 62,
+        "title": "Power one sensing chain",
+        "body": [
+          "One piezo disc + MCP6002 conditioning",
+          "Enable ESP32 ADC / DMA"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "capture",
+        "x": 80,
+        "y": 632,
+        "w": 340,
+        "h": 76,
+        "title": "Acquire one streamed recording",
+        "body": [
+          "Example: 20.5 s at 8 kHz mono",
+          "Stream with bounded / reused buffers",
+          "Keep the acquisition timestamp"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "valid",
+        "x": 80,
+        "y": 740,
+        "w": 340,
+        "h": 88,
+        "title": "Acquisition valid?",
+        "body": [
+          "ADC / clipping / data checks"
+        ],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "invalid",
+        "x": 80,
+        "y": 856,
+        "w": 340,
+        "h": 66,
+        "title": "Record an invalid measurement",
+        "body": [
+          "Increment quality / acquisition counters",
+          "Do not classify an invalid capture as healthy"
+        ],
+        "kind": "process",
+        "tone": "error"
+      },
+      {
+        "id": "to_a",
+        "x": 493,
+        "y": 770,
+        "w": 28,
+        "h": 28,
+        "title": "A",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "to_c1",
+        "x": 493,
+        "y": 456,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "to_c2",
+        "x": 493,
+        "y": 905,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "from_a",
+        "x": 786,
+        "y": 190,
+        "w": 28,
+        "h": 28,
+        "title": "A",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "windows",
+        "x": 630,
+        "y": 246,
+        "w": 340,
+        "h": 76,
+        "title": "Select the temporal windows",
+        "body": [
+          "10 s windows, 5 s stride + final tail",
+          "20.5 s example: 0, 5, 10, 10.5 s",
+          "Reset this recording's maximum score"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "filter",
+        "x": 630,
+        "y": 350,
+        "w": 340,
+        "h": 76,
+        "title": "Filter and measure signal quality",
+        "body": [
+          "Bandpass: 100-2500 Hz",
+          "100 ms energy / burst statistics",
+          "Energy variation is not an RPW decision"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "mfcc",
+        "x": 630,
+        "y": 455,
+        "w": 340,
+        "h": 76,
+        "title": "Extract and normalize MFCCs",
+        "body": [
+          "30 frames x 13 coefficients = 390 values",
+          "Apply frozen training mean / scale",
+          "Match the validated frontend exactly"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "compute",
+        "x": 630,
+        "y": 560,
+        "w": 340,
+        "h": 76,
+        "title": "Run the local INT8 residual CNN",
+        "body": [
+          "Quantize inputs with export scale / zero",
+          "Run the saved 55,864-byte model",
+          "Dequantize the output logit"
+        ],
+        "kind": "process",
+        "tone": "accent"
+      },
+      {
+        "id": "window_result",
+        "x": 630,
+        "y": 665,
+        "w": 340,
+        "h": 76,
+        "title": "Update the recording RPW score",
+        "body": [
+          "Apply sigmoid to the window logit",
+          "Record score = maximum window score",
+          "Release / reuse temporary tensors"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "more",
+        "x": 630,
+        "y": 770,
+        "w": 340,
+        "h": 82,
+        "title": "More windows?",
+        "body": [],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "finish",
+        "x": 630,
+        "y": 880,
+        "w": 340,
+        "h": 76,
+        "title": "Apply the saved recording threshold",
+        "body": [
+          "RPW or healthy from the maximum score",
+          "Update valid / RPW / healthy counters",
+          "Retain max score and quality statistics"
+        ],
+        "kind": "process",
+        "tone": "accent"
+      },
+      {
+        "id": "to_c3",
+        "x": 786,
+        "y": 982,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "from_c",
+        "x": 1336,
+        "y": 190,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "state",
+        "x": 1180,
+        "y": 246,
+        "w": 340,
+        "h": 76,
+        "title": "Persist daily state",
+        "body": [
+          "Measurement and validity / RPW counters",
+          "Max score, battery and quality / fault flags",
+          "Retain unacknowledged prior days"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "report_due",
+        "x": 1180,
+        "y": 350,
+        "w": 340,
+        "h": 90,
+        "title": "Report or retry due?",
+        "body": [
+          "At least one report each day"
+        ],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "body",
+        "x": 1180,
+        "y": 475,
+        "w": 340,
+        "h": 88,
+        "title": "Build the daily result summary",
+        "body": [
+          "Proposed 24-byte application body",
+          "ID / day, counts, scores, battery / status",
+          "Report even when no measurement is valid"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "budget",
+        "x": 1180,
+        "y": 592,
+        "w": 340,
+        "h": 76,
+        "title": "Queue the packet before radio TX",
+        "body": [
+          "Use sequence and schema / model version",
+          "Keep totals until acknowledgement",
+          "Transport / integrity metadata is extra"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "tx",
+        "x": 1180,
+        "y": 712,
+        "w": 340,
+        "h": 76,
+        "title": "Transmit using RFM95W LoRa",
+        "body": [
+          "Use the configured channel / SF / BW",
+          "Apply the planned TX slot / backoff",
+          "Gateway relays; queued data survives failure"
+        ],
+        "kind": "process",
+        "tone": "accent"
+      },
+      {
+        "id": "ack",
+        "x": 1180,
+        "y": 822,
+        "w": 340,
+        "h": 82,
+        "title": "Application ACK received?",
+        "body": [],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "retry",
+        "x": 992,
+        "y": 822,
+        "w": 150,
+        "h": 94,
+        "title": "Delivery pending",
+        "body": [
+          "Bounded retries",
+          "Backoff / retry later",
+          "Persist until ACK",
+          "Mark report overdue"
+        ],
+        "kind": "process",
+        "tone": "warning"
+      },
+      {
+        "id": "sleep",
+        "x": 1180,
+        "y": 928,
+        "w": 340,
+        "h": 82,
+        "title": "Commit acknowledged state",
+        "body": [
+          "Clear acknowledged items / totals only",
+          "Queue pending: schedule immediate TX wake",
+          "Else sleep until next sample / retry"
+        ],
+        "kind": "terminator",
+        "tone": "normal"
+      },
+      {
+        "id": "endpoint",
+        "x": 80,
+        "y": 1070,
+        "w": 1440,
+        "h": 92,
+        "title": "EXTERNAL ENDPOINT ONLY - gateway relay and result storage",
+        "body": [
+          "Gateway: validate / buffer the LoRa packet and forward over Wi-Fi or cellular.",
+          "Server: deduplicate by node / day / sequence, store daily results and update dashboard / RPW alerts.",
+          "No server acoustic classifier is required for this route; the node already made the recording-level decisions."
+        ],
+        "kind": "external",
+        "tone": "normal"
+      }
+    ],
+    "edges": [
+      {
+        "source": "start",
+        "target": "config",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            234
+          ],
+          [
+            250.0,
+            254
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "config",
+        "target": "wake",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            316
+          ],
+          [
+            250.0,
+            340
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "wake",
+        "target": "due",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            402
+          ],
+          [
+            250.0,
+            428
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "due",
+        "target": "power",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            512
+          ],
+          [
+            250.0,
+            547
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          276,
+          530
+        ],
+        "dashed": false
+      },
+      {
+        "source": "due",
+        "target": "to_c1",
+        "source_side": "right",
+        "target_side": "left",
+        "points": [
+          [
+            420,
+            470.0
+          ],
+          [
+            493,
+            470.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          457,
+          460
+        ],
+        "dashed": false
+      },
+      {
+        "source": "power",
+        "target": "capture",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            609
+          ],
+          [
+            250.0,
+            632
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "capture",
+        "target": "valid",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            708
+          ],
+          [
+            250.0,
+            740
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "valid",
+        "target": "to_a",
+        "source_side": "right",
+        "target_side": "left",
+        "points": [
+          [
+            420,
+            784.0
+          ],
+          [
+            493,
+            784.0
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          457,
+          770
+        ],
+        "dashed": false
+      },
+      {
+        "source": "valid",
+        "target": "invalid",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            828
+          ],
+          [
+            250.0,
+            856
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          278,
+          844
+        ],
+        "dashed": false
+      },
+      {
+        "source": "invalid",
+        "target": "to_c2",
+        "source_side": "right",
+        "target_side": "left",
+        "points": [
+          [
+            420,
+            889.0
+          ],
+          [
+            457,
+            889
+          ],
+          [
+            457,
+            919
+          ],
+          [
+            493,
+            919.0
+          ]
+        ],
+        "label": "Report status",
+        "label_at": [
+          497,
+          955
+        ],
+        "dashed": false
+      },
+      {
+        "source": "from_a",
+        "target": "windows",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            218
+          ],
+          [
+            800.0,
+            246
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "windows",
+        "target": "filter",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            322
+          ],
+          [
+            800.0,
+            350
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "filter",
+        "target": "mfcc",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            426
+          ],
+          [
+            800.0,
+            455
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "mfcc",
+        "target": "compute",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            531
+          ],
+          [
+            800.0,
+            560
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "compute",
+        "target": "window_result",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            636
+          ],
+          [
+            800.0,
+            665
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "window_result",
+        "target": "more",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            741
+          ],
+          [
+            800.0,
+            770
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "more",
+        "target": "filter",
+        "source_side": "left",
+        "target_side": "left",
+        "points": [
+          [
+            630,
+            811.0
+          ],
+          [
+            585,
+            811
+          ],
+          [
+            585,
+            388
+          ],
+          [
+            630,
+            388.0
+          ]
+        ],
+        "label": "Yes: next window",
+        "label_at": [
+          580,
+          442
+        ],
+        "dashed": false
+      },
+      {
+        "source": "more",
+        "target": "finish",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            852
+          ],
+          [
+            800.0,
+            880
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          824,
+          869
+        ],
+        "dashed": false
+      },
+      {
+        "source": "finish",
+        "target": "to_c3",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            956
+          ],
+          [
+            800.0,
+            982
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "from_c",
+        "target": "state",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            218
+          ],
+          [
+            1350.0,
+            246
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "state",
+        "target": "report_due",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            322
+          ],
+          [
+            1350.0,
+            350
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "report_due",
+        "target": "body",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            440
+          ],
+          [
+            1350.0,
+            475
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          1373,
+          460
+        ],
+        "dashed": false
+      },
+      {
+        "source": "report_due",
+        "target": "sleep",
+        "source_side": "right",
+        "target_side": "right",
+        "points": [
+          [
+            1520,
+            395.0
+          ],
+          [
+            1548,
+            395
+          ],
+          [
+            1548,
+            969
+          ],
+          [
+            1520,
+            969.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          1534,
+          454
+        ],
+        "dashed": false
+      },
+      {
+        "source": "body",
+        "target": "budget",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            563
+          ],
+          [
+            1350.0,
+            592
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "budget",
+        "target": "tx",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            668
+          ],
+          [
+            1350.0,
+            712
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "tx",
+        "target": "ack",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            788
+          ],
+          [
+            1350.0,
+            822
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "ack",
+        "target": "sleep",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            904
+          ],
+          [
+            1350.0,
+            928
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          1375,
+          924
+        ],
+        "dashed": false
+      },
+      {
+        "source": "ack",
+        "target": "retry",
+        "source_side": "left",
+        "target_side": "right",
+        "points": [
+          [
+            1180,
+            863.0
+          ],
+          [
+            1142,
+            869.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          1160,
+          852
+        ],
+        "dashed": false
+      },
+      {
+        "source": "retry",
+        "target": "sleep",
+        "source_side": "bottom",
+        "target_side": "left",
+        "points": [
+          [
+            1067.0,
+            916
+          ],
+          [
+            1067,
+            969
+          ],
+          [
+            1180,
+            969.0
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "sleep",
+        "target": "wake",
+        "source_side": "bottom",
+        "target_side": "left",
+        "points": [
+          [
+            1350.0,
+            1010
+          ],
+          [
+            1350,
+            1024
+          ],
+          [
+            52,
+            1024
+          ],
+          [
+            52,
+            371
+          ],
+          [
+            80,
+            371.0
+          ]
+        ],
+        "label": "Next scheduled wake",
+        "label_at": [
+          550,
+          1048
+        ],
+        "dashed": false
+      },
+      {
+        "source": "tx",
+        "target": "endpoint",
+        "source_side": "right",
+        "target_side": "right",
+        "points": [
+          [
+            1520,
+            750.0
+          ],
+          [
+            1580,
+            750
+          ],
+          [
+            1580,
+            1116
+          ],
+          [
+            1520,
+            1116.0
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": true
+      }
+    ]
+  },
+  {
+    "route": "server",
+    "title": "Server-side classification: one sensing layer",
+    "nodes": [
+      {
+        "id": "start",
+        "x": 80,
+        "y": 190,
+        "w": 340,
+        "h": 44,
+        "title": "BOOT / INITIALIZE",
+        "body": [],
+        "kind": "terminator",
+        "tone": "normal"
+      },
+      {
+        "id": "config",
+        "x": 80,
+        "y": 254,
+        "w": 340,
+        "h": 62,
+        "title": "Load the matched deployment profile",
+        "body": [
+          "Feature constants, versions and thresholds",
+          "Restore RTC schedule, daily state and queue"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "wake",
+        "x": 80,
+        "y": 340,
+        "w": 340,
+        "h": 62,
+        "title": "Wake from RTC or pending retry",
+        "body": [
+          "Check current time and unsent state",
+          "Measurement cadence is configurable"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "due",
+        "x": 80,
+        "y": 428,
+        "w": 340,
+        "h": 84,
+        "title": "Measurement due?",
+        "body": [],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "power",
+        "x": 80,
+        "y": 547,
+        "w": 340,
+        "h": 62,
+        "title": "Power one sensing chain",
+        "body": [
+          "One piezo disc + MCP6002 conditioning",
+          "Enable ESP32 ADC / DMA"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "capture",
+        "x": 80,
+        "y": 632,
+        "w": 340,
+        "h": 76,
+        "title": "Acquire one streamed recording",
+        "body": [
+          "Example: 20.5 s at 8 kHz mono",
+          "Stream with bounded / reused buffers",
+          "Keep the acquisition timestamp"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "valid",
+        "x": 80,
+        "y": 740,
+        "w": 340,
+        "h": 88,
+        "title": "Acquisition valid?",
+        "body": [
+          "ADC / clipping / data checks"
+        ],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "invalid",
+        "x": 80,
+        "y": 856,
+        "w": 340,
+        "h": 66,
+        "title": "Record an invalid measurement",
+        "body": [
+          "Increment quality / acquisition counters",
+          "Do not classify an invalid capture as healthy"
+        ],
+        "kind": "process",
+        "tone": "error"
+      },
+      {
+        "id": "to_a",
+        "x": 493,
+        "y": 770,
+        "w": 28,
+        "h": 28,
+        "title": "A",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "to_c1",
+        "x": 493,
+        "y": 456,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "to_c2",
+        "x": 493,
+        "y": 905,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "from_a",
+        "x": 786,
+        "y": 190,
+        "w": 28,
+        "h": 28,
+        "title": "A",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "windows",
+        "x": 630,
+        "y": 246,
+        "w": 340,
+        "h": 76,
+        "title": "Select the temporal windows",
+        "body": [
+          "10 s windows, 5 s stride + final tail",
+          "20.5 s example: 0, 5, 10, 10.5 s",
+          "Initialize ordered window-vector list"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "filter",
+        "x": 630,
+        "y": 350,
+        "w": 340,
+        "h": 76,
+        "title": "Filter and measure signal quality",
+        "body": [
+          "Bandpass: 100-2500 Hz",
+          "100 ms energy / burst statistics",
+          "Energy variation is not an RPW decision"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "mfcc",
+        "x": 630,
+        "y": 455,
+        "w": 340,
+        "h": 76,
+        "title": "Extract and normalize MFCCs",
+        "body": [
+          "30 frames x 13 coefficients = 390 values",
+          "Apply frozen training mean / scale",
+          "Match the validated frontend exactly"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "compute",
+        "x": 630,
+        "y": 560,
+        "w": 340,
+        "h": 76,
+        "title": "Project into PCA16 coordinates",
+        "body": [
+          "Subtract the frozen PCA training mean",
+          "Apply the learned 16 x 390 projection",
+          "No classifier runs on this sensing node"
+        ],
+        "kind": "process",
+        "tone": "accent"
+      },
+      {
+        "id": "window_result",
+        "x": 630,
+        "y": 665,
+        "w": 340,
+        "h": 76,
+        "title": "Encode one 16-byte window vector",
+        "body": [
+          "Round / clamp using training-fitted ranges",
+          "16 components, one byte per component",
+          "Retain profile ID and window order"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "more",
+        "x": 630,
+        "y": 770,
+        "w": 340,
+        "h": 82,
+        "title": "More windows?",
+        "body": [],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "finish",
+        "x": 630,
+        "y": 880,
+        "w": 340,
+        "h": 76,
+        "title": "Losslessly pack the window vectors",
+        "body": [
+          "First vector + delta / Rice codes + escapes",
+          "Keep the shortest encoding or raw fallback",
+          "No additional PCA precision is discarded"
+        ],
+        "kind": "process",
+        "tone": "accent"
+      },
+      {
+        "id": "to_c3",
+        "x": 786,
+        "y": 982,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "from_c",
+        "x": 1336,
+        "y": 190,
+        "w": 28,
+        "h": 28,
+        "title": "C",
+        "body": [],
+        "kind": "connector",
+        "tone": "normal"
+      },
+      {
+        "id": "state",
+        "x": 1180,
+        "y": 246,
+        "w": 340,
+        "h": 76,
+        "title": "Persist features and health state",
+        "body": [
+          "Keep each complete measurement record",
+          "Node / record / window / profile identifiers",
+          "No RPW label is generated here"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "report_due",
+        "x": 1180,
+        "y": 350,
+        "w": 340,
+        "h": 90,
+        "title": "Transmit due?",
+        "body": [
+          "Sample / daily / retry deadline"
+        ],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "body",
+        "x": 1180,
+        "y": 475,
+        "w": 340,
+        "h": 88,
+        "title": "Build the feature / status report",
+        "body": [
+          "Drain retained records at least daily",
+          "Multiple packets may be required",
+          "Send heartbeat even with no valid capture"
+        ],
+        "kind": "process",
+        "tone": "normal"
+      },
+      {
+        "id": "budget",
+        "x": 1180,
+        "y": 592,
+        "w": 340,
+        "h": 82,
+        "title": "Feature block fits budget?",
+        "body": [
+          "64 B feature-block target"
+        ],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "fragment",
+        "x": 992,
+        "y": 590,
+        "w": 150,
+        "h": 104,
+        "title": "If oversized",
+        "body": [
+          "Fragment the record",
+          "Keep index + total",
+          "Preserve all windows",
+          "Do not silently drop"
+        ],
+        "kind": "process",
+        "tone": "warning"
+      },
+      {
+        "id": "tx",
+        "x": 1180,
+        "y": 712,
+        "w": 340,
+        "h": 76,
+        "title": "Transmit using RFM95W LoRa",
+        "body": [
+          "Use the configured channel / SF / BW",
+          "Apply the planned TX slot / backoff",
+          "Gateway relays; queued data survives failure"
+        ],
+        "kind": "process",
+        "tone": "accent"
+      },
+      {
+        "id": "ack",
+        "x": 1180,
+        "y": 822,
+        "w": 340,
+        "h": 82,
+        "title": "Application ACK received?",
+        "body": [],
+        "kind": "decision",
+        "tone": "normal"
+      },
+      {
+        "id": "retry",
+        "x": 992,
+        "y": 822,
+        "w": 150,
+        "h": 94,
+        "title": "Delivery pending",
+        "body": [
+          "Bounded retries",
+          "Backoff / retry later",
+          "Persist until ACK",
+          "Mark report overdue"
+        ],
+        "kind": "process",
+        "tone": "warning"
+      },
+      {
+        "id": "sleep",
+        "x": 1180,
+        "y": 928,
+        "w": 340,
+        "h": 82,
+        "title": "Commit acknowledged state",
+        "body": [
+          "Clear acknowledged items / totals only",
+          "Queue pending: schedule immediate TX wake",
+          "Else sleep until next sample / retry"
+        ],
+        "kind": "terminator",
+        "tone": "normal"
+      },
+      {
+        "id": "endpoint",
+        "x": 80,
+        "y": 1070,
+        "w": 1440,
+        "h": 92,
+        "title": "EXTERNAL ENDPOINT ONLY - gateway relay and server classification",
+        "body": [
+          "Gateway: validate / buffer / forward over Wi-Fi or cellular; no RPW inference at the gateway.",
+          "Server: check profile/version, reassemble fragments, unpack deltas, dequantize PCA16 and apply inverse PCA.",
+          "Reshape to normalized 30 x 13 MFCCs (do not normalize twice); classify windows, take maximum score, apply saved threshold, store / alert."
+        ],
+        "kind": "external",
+        "tone": "normal"
+      }
+    ],
+    "edges": [
+      {
+        "source": "start",
+        "target": "config",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            234
+          ],
+          [
+            250.0,
+            254
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "config",
+        "target": "wake",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            316
+          ],
+          [
+            250.0,
+            340
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "wake",
+        "target": "due",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            402
+          ],
+          [
+            250.0,
+            428
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "due",
+        "target": "power",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            512
+          ],
+          [
+            250.0,
+            547
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          276,
+          530
+        ],
+        "dashed": false
+      },
+      {
+        "source": "due",
+        "target": "to_c1",
+        "source_side": "right",
+        "target_side": "left",
+        "points": [
+          [
+            420,
+            470.0
+          ],
+          [
+            493,
+            470.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          457,
+          460
+        ],
+        "dashed": false
+      },
+      {
+        "source": "power",
+        "target": "capture",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            609
+          ],
+          [
+            250.0,
+            632
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "capture",
+        "target": "valid",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            708
+          ],
+          [
+            250.0,
+            740
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "valid",
+        "target": "to_a",
+        "source_side": "right",
+        "target_side": "left",
+        "points": [
+          [
+            420,
+            784.0
+          ],
+          [
+            493,
+            784.0
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          457,
+          770
+        ],
+        "dashed": false
+      },
+      {
+        "source": "valid",
+        "target": "invalid",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            250.0,
+            828
+          ],
+          [
+            250.0,
+            856
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          278,
+          844
+        ],
+        "dashed": false
+      },
+      {
+        "source": "invalid",
+        "target": "to_c2",
+        "source_side": "right",
+        "target_side": "left",
+        "points": [
+          [
+            420,
+            889.0
+          ],
+          [
+            457,
+            889
+          ],
+          [
+            457,
+            919
+          ],
+          [
+            493,
+            919.0
+          ]
+        ],
+        "label": "Report status",
+        "label_at": [
+          497,
+          955
+        ],
+        "dashed": false
+      },
+      {
+        "source": "from_a",
+        "target": "windows",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            218
+          ],
+          [
+            800.0,
+            246
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "windows",
+        "target": "filter",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            322
+          ],
+          [
+            800.0,
+            350
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "filter",
+        "target": "mfcc",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            426
+          ],
+          [
+            800.0,
+            455
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "mfcc",
+        "target": "compute",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            531
+          ],
+          [
+            800.0,
+            560
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "compute",
+        "target": "window_result",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            636
+          ],
+          [
+            800.0,
+            665
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "window_result",
+        "target": "more",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            741
+          ],
+          [
+            800.0,
+            770
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "more",
+        "target": "filter",
+        "source_side": "left",
+        "target_side": "left",
+        "points": [
+          [
+            630,
+            811.0
+          ],
+          [
+            585,
+            811
+          ],
+          [
+            585,
+            388
+          ],
+          [
+            630,
+            388.0
+          ]
+        ],
+        "label": "Yes: next window",
+        "label_at": [
+          580,
+          442
+        ],
+        "dashed": false
+      },
+      {
+        "source": "more",
+        "target": "finish",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            852
+          ],
+          [
+            800.0,
+            880
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          824,
+          869
+        ],
+        "dashed": false
+      },
+      {
+        "source": "finish",
+        "target": "to_c3",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            800.0,
+            956
+          ],
+          [
+            800.0,
+            982
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "from_c",
+        "target": "state",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            218
+          ],
+          [
+            1350.0,
+            246
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "state",
+        "target": "report_due",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            322
+          ],
+          [
+            1350.0,
+            350
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "report_due",
+        "target": "body",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            440
+          ],
+          [
+            1350.0,
+            475
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          1373,
+          460
+        ],
+        "dashed": false
+      },
+      {
+        "source": "report_due",
+        "target": "sleep",
+        "source_side": "right",
+        "target_side": "right",
+        "points": [
+          [
+            1520,
+            395.0
+          ],
+          [
+            1548,
+            395
+          ],
+          [
+            1548,
+            969
+          ],
+          [
+            1520,
+            969.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          1534,
+          454
+        ],
+        "dashed": false
+      },
+      {
+        "source": "body",
+        "target": "budget",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            563
+          ],
+          [
+            1350.0,
+            592
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "budget",
+        "target": "tx",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            674
+          ],
+          [
+            1350.0,
+            712
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          1374,
+          696
+        ],
+        "dashed": false
+      },
+      {
+        "source": "budget",
+        "target": "fragment",
+        "source_side": "left",
+        "target_side": "right",
+        "points": [
+          [
+            1180,
+            633.0
+          ],
+          [
+            1142,
+            642.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          1160,
+          622
+        ],
+        "dashed": false
+      },
+      {
+        "source": "fragment",
+        "target": "tx",
+        "source_side": "bottom",
+        "target_side": "left",
+        "points": [
+          [
+            1067.0,
+            694
+          ],
+          [
+            1067,
+            750
+          ],
+          [
+            1180,
+            750.0
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "tx",
+        "target": "ack",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            788
+          ],
+          [
+            1350.0,
+            822
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "ack",
+        "target": "sleep",
+        "source_side": "bottom",
+        "target_side": "top",
+        "points": [
+          [
+            1350.0,
+            904
+          ],
+          [
+            1350.0,
+            928
+          ]
+        ],
+        "label": "Yes",
+        "label_at": [
+          1375,
+          924
+        ],
+        "dashed": false
+      },
+      {
+        "source": "ack",
+        "target": "retry",
+        "source_side": "left",
+        "target_side": "right",
+        "points": [
+          [
+            1180,
+            863.0
+          ],
+          [
+            1142,
+            869.0
+          ]
+        ],
+        "label": "No",
+        "label_at": [
+          1160,
+          852
+        ],
+        "dashed": false
+      },
+      {
+        "source": "retry",
+        "target": "sleep",
+        "source_side": "bottom",
+        "target_side": "left",
+        "points": [
+          [
+            1067.0,
+            916
+          ],
+          [
+            1067,
+            969
+          ],
+          [
+            1180,
+            969.0
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": false
+      },
+      {
+        "source": "sleep",
+        "target": "wake",
+        "source_side": "bottom",
+        "target_side": "left",
+        "points": [
+          [
+            1350.0,
+            1010
+          ],
+          [
+            1350,
+            1024
+          ],
+          [
+            52,
+            1024
+          ],
+          [
+            52,
+            371
+          ],
+          [
+            80,
+            371.0
+          ]
+        ],
+        "label": "Next scheduled wake",
+        "label_at": [
+          550,
+          1048
+        ],
+        "dashed": false
+      },
+      {
+        "source": "tx",
+        "target": "endpoint",
+        "source_side": "right",
+        "target_side": "right",
+        "points": [
+          [
+            1520,
+            750.0
+          ],
+          [
+            1580,
+            750
+          ],
+          [
+            1580,
+            1116
+          ],
+          [
+            1520,
+            1116.0
+          ]
+        ],
+        "label": "",
+        "label_at": null,
+        "dashed": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "family": "cnn",
+  "id": "cnn_ablation_06",
+  "suite": "ablation",
+  "time_mask": 3
+}
